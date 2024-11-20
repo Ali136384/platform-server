@@ -2,6 +2,8 @@ import express from "express";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
 import userRouter from "./routes/userRoutes.js";
+import courseRouter from "./routes/courseRoutes.js";
+import lessonsRoutes from "./routes/lessonsRoutes.js";
 const app = express();
 app.use(express.json());
 dotenv.config();
@@ -18,5 +20,9 @@ mongoose
   });
 
 app.use("/api/users", userRouter);
+
+app.use("/api/courses", courseRouter);
+
+app.use("/api/lessons", lessonsRoutes);
 
 export default app;
