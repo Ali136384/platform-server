@@ -1,8 +1,15 @@
 import express from "express";
-import { createCourse } from "../controllers/course.js";
+import {
+  createCourse,
+  deleteCourse,
+  getCourseById,
+} from "../controllers/course.js";
 const router = express.Router();
 
-// POST route for creating a new user
 router.post("/create", createCourse);
+
+router.get("/get/:id", getCourseById);
+
+router.delete("/delete/:id", deleteCourse);
 
 export default router;

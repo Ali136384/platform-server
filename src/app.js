@@ -5,6 +5,7 @@ import userRouter from "./routes/userRoutes.js";
 import courseRouter from "./routes/courseRoutes.js";
 import lessonsRoutes from "./routes/lessonsRoutes.js";
 import qaRoutes from "./routes/qaRoutes.js";
+import HomeWorkRoutes from "./routes/HomeWorkRoutes.js";
 const app = express();
 app.use(express.json());
 dotenv.config();
@@ -26,6 +27,8 @@ app.use("/api/courses", courseRouter);
 
 app.use("/api/lessons", lessonsRoutes);
 
-app.use("/api/qa", qaRoutes);
+app.use("/api/qas", qaRoutes);
+
+app.use("/api/homeworks", HomeWorkRoutes);
 
 export default app;
