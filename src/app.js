@@ -5,6 +5,7 @@ import userRouter from "./routes/userRoutes.js";
 import courseRouter from "./routes/courseRoutes.js";
 import lessonsRoutes from "./routes/lessonsRoutes.js";
 import qaRoutes from "./routes/qaRoutes.js";
+import quizRoutes from "./routes/quizRoutes.js";
 import HomeWorkRoutes from "./routes/HomeWorkRoutes.js";
 const app = express();
 app.use(express.json());
@@ -28,6 +29,8 @@ app.use("/api/courses", courseRouter);
 app.use("/api/lessons", lessonsRoutes);
 
 app.use("/api/qas", qaRoutes);
+
+app.use("/api/quiz", quizRoutes);
 
 app.use("/api/homeworks", HomeWorkRoutes);
 
